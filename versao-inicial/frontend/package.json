@@ -1,0 +1,54 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "bootstrap-vue": "2.0.0-rc.11",
+    "font-awesome": "4.7.0",
+    "highlightjs": "9.10.0",
+    "liquor-tree": "0.2.32",
+    "vue": "2.5.17",
+    "vue-gravatar": "1.2.1",
+    "vue-mq": "0.2.1",
+    "vue-router": "3.0.1",
+    "vue-toasted": "1.1.24",
+    "vue2-editor": "2.6.6",
+    "vuex": "3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "3.0.1",
+    "@vue/cli-plugin-eslint": "3.0.1",
+    "@vue/cli-service": "3.0.1",
+    "vue-template-compiler": "2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
