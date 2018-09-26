@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt-nodejs')
 const { existsOrError, notExistsOrError, equalsOrError } = require('./validation')
 
 module.exports = app => {
-    const obterHash = (password, callback) => {
+    const encryptPassword = (password, callback) => {
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(password, salt, null, (err, hash) => callback(hash))
         })
@@ -29,7 +29,7 @@ module.exports = app => {
             return res.status(400).send(msg)
         }
 
-        obterHash(req.body.password, hash => {
+        encryptPassword(req.body.password, hash => {
             user.password = hash
             delete user.confirmPassword
 
