@@ -37,7 +37,7 @@ export default {
 		}
 	},
 	methods: {
-    	async validateToken() {
+		async validateToken() {
 			this.validatingToken = true
 
 			const json = localStorage.getItem("__knowledge_user")

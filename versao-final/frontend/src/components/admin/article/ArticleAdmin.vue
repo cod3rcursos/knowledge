@@ -64,7 +64,7 @@
 <script>
 import { VueEditor } from "vue2-editor"
 import axios from 'axios'
-import { baseApiUrl } from '@/global'
+import { baseApiUrl, showError } from '@/global'
 
 export default {
     name: 'ArticleAdmin',
