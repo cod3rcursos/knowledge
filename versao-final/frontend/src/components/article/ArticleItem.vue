@@ -1,12 +1,13 @@
 <template>
     <div class="article-item">
-        <router-link :to="{ name: 'articlesById', params: { id: article.id } }">
+        <router-link :to="{ name: 'articleById', params: { id: article.id } }">
             <div class="article-item-image d-none d-sm-block">
-                <img :src="article.imageUrl"
-                    v-if="article.imageUrl"
+                <img v-if="article.imageUrl"
+                    :src="article.imageUrl"
                     height="150" width="150" alt="Article">
-                <img src="@/assets/article.png"
-                    v-else height="150" width="150" alt="Article">
+                <img v-else
+                    src="@/assets/article.png"
+                    height="150" width="150" alt="Article">
             </div>
             <div class="article-item-info">
                 <h2>{{ article.name }}</h2>
@@ -58,8 +59,8 @@ export default {
     }
 
     .article-item-info {
-        align-self: stretch;
         display: flex;
+        align-self: stretch;
         flex-direction: column;
     }
 

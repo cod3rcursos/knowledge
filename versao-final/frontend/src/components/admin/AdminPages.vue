@@ -1,13 +1,13 @@
 <template>
-    <div class="admin-page">
+    <div class="admin-pages">
         <PageTitle icon="fa fa-cogs" main="Administração do Sistema"
             sub="Cadastros & Cia" />
-        <div class="admin-page-tabs">
+        <div class="admin-pages-tabs">
             <b-card no-body>
                 <b-tabs card>
                     <b-tab title="Artigos" active>
                         <ArticleAdmin />
-                    </b-tab>                    
+                    </b-tab>
                     <b-tab title="Categorias">
                         <CategoryAdmin />
                     </b-tab>
@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import PageTitle from '../common/PageTitle'
-import ArticleAdmin from './article/ArticleAdmin'
-import CategoryAdmin from './category/CategoryAdmin'
-import UserAdmin from './user/UserAdmin'
+import PageTitle from '../template/PageTitle'
+import ArticleAdmin from './ArticleAdmin'
+import CategoryAdmin from './CategoryAdmin'
+import UserAdmin from './UserAdmin'
 
 export default {
-    name: 'AdminPage',
+    name: 'AdminPages',
     components: { PageTitle, ArticleAdmin, CategoryAdmin, UserAdmin }
 }
 </script>

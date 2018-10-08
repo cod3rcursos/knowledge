@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <PageTitle icon="fa fa-home" main="Dashboard" 
+    <div class="home">
+        <PageTitle icon="fa fa-home" main="Dashboard"
             sub="Base de Conhecimento" />
         <div class="stats">
             <Stat title="Categorias" :value="stat.categories"
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import PageTitle from '../common/PageTitle'
+import PageTitle from '../template/PageTitle'
 import Stat from './Stat'
 import axios from 'axios'
 import { baseApiUrl } from '@/global'

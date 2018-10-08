@@ -1,7 +1,7 @@
 <template>
-    <div class="footer">
+    <footer class="footer">
         <span>Copyright <strong>Cod3r</strong> © 2015-2018</span>
-    </div>
+    </footer>
 </template>
 
 <script>

@@ -10,11 +10,10 @@ import 'highlightjs/styles/dracula.css'
 import hljs from 'highlightjs/highlight.pack.js'
 import { baseApiUrl } from '@/global'
 import axios from 'axios'
-import PageTitle from '../common/PageTitle'
+import PageTitle from '../template/PageTitle'
 
 export default {
     name: 'ArticleById',
-    props: ['id'],
     components: { PageTitle },
     data: function() {
         return {
@@ -22,19 +21,11 @@ export default {
         }
     },
     mounted() {
-        const url = `${baseApiUrl}/articles/${this.id}`
-        axios.get(url).then(res => {
-            const article = res.data
-            
-            article.content = article.content
-                .replace(/<pre (.*?[^?])?>([\s\S]*?[^?])<\/pre>/gm, 
-                    '<pre $1><code>$2</code></pre>')
-
-            this.article = article
-        })
+        const url = `${baseApiUrl}/articles/${this.$route.params.id}`
+        axios.get(url).then(res => this.article = res.data)
     },
     updated() {
-        document.querySelectorAll('pre code').forEach(e => {
+        document.querySelectorAll('.article-content pre.ql-syntax').forEach(e => {
             hljs.highlightBlock(e)
         })
     }
@@ -48,10 +39,12 @@ export default {
         padding: 25px;
     }
 
-    .article-content pre code {
+    .article-content pre {
         padding: 20px;
         border-radius: 8px;
         font-size: 1.2rem;
+        background-color: #1e1e1e;
+        color: #FFF;
     }
 
     .article-content img {
